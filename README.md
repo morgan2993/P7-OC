@@ -16,6 +16,6 @@ ng serve
 # DATABASE 
 
 GroupomaniaDB.sql dans dossier backend 
-Exporté avec MySqlWorckbench, fonctionne avec MySqlWorckbench.
+exporté avec MySqlWorckbench, fonctionne avec MySqlWorckbench.
 => Importer dans Base de donnée avec MySqlWorckbench
 
