@@ -2,14 +2,16 @@
 FInal Openclassroom Project Dev Web
 
 # RUN BACKEND (Node.js)
+
 npm install
 node server
-'''
+
 
 # RUN FRONTEND (Angular)
+
 npm install
 ng serve
-'''
+
 
 # DATABASE 
 
