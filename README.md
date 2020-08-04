@@ -21,7 +21,11 @@ then run ng serve
 
 # DATABASE 
 
-GroupomaniaDB.sql dans dossier backend 
+GroupomaniaDB.sql dans dossier backend
+
 exporté avec MySqlWorkbench, fonctionne avec MySqlWorkbench.
+
 => Importer dans Base de donnée avec MySqlWorckbench
+
+
 
