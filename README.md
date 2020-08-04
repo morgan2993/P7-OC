@@ -27,5 +27,7 @@ exporté avec MySqlWorkbench, fonctionne avec MySqlWorkbench.
 
 => Importer dans Base de donnée avec MySqlWorckbench
 
+données de la base de donnée dans backend>config>config.json
+
 
 
