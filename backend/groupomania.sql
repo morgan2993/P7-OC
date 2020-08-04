@@ -1,10 +1,10 @@
 /*
 MySQL Data Transfer
 Source Host: localhost
-Source Database: test
+Source Database: groupomania
 Target Host: localhost
-Target Database: test
-Date: 03.08.2020 17:47:34
+Target Database: groupomania
+Date: 04.08.2020 16:07:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,7 +41,7 @@ CREATE TABLE `posts` (
   PRIMARY KEY (`id`),
   KEY `UserId` (`UserId`),
   CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for users
