@@ -1,0 +1,15 @@
+:host {
+	form {
+		display: flex;
+		flex-direction: column;
+		padding: 0 1rem;
+
+		button {
+			padding: 0.5rem 0;
+		}
+	}
+
+	.file-input {
+		margin-bottom: 1rem;
+	}
+}

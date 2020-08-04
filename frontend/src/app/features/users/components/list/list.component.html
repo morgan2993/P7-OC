@@ -1,0 +1,13 @@
+<mat-card *ngFor="let user of users;">
+  <mat-card-content>
+    <div class="user-information">
+      <div class="name"><a [routerLink]="['/users', 'view', user.id]" >{{ user.firstname +' '+ user.lastname }}</a></div>
+      <div class="status">{{ !!user.admin ? 'admin' : 'user' }}</div>
+    </div>
+    <div class="user-actions">
+      <button mat-icon-button (click)="deleteUser(user)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

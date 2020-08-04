@@ -1,0 +1,25 @@
+<div class="logo-container">
+  <img src="/assets/logos/icon-above-font-wide.png" alt="logo groupomania">
+</div>
+
+<div class="align-center">
+  <h2>Connexion</h2>
+</div>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input matInput email formControlName="mail" type="email" required>
+    <mat-error>This field in invalid.</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Mot de passe</mat-label>
+    <input matInput formControlName="mdp" type="password" minlength="5" required>
+    <mat-error>This field in invalid.</mat-error>
+  </mat-form-field>
+  <button type="submit" [disabled]="!loginForm.valid" mat-flat-button color="primary">Connexion</button>
+</form>
+
+<div class="incentive">
+  ou <a [routerLink]="['/users/register']">S'inscrire</a>
+</div>

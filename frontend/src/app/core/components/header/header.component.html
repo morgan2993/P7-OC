@@ -1,0 +1,59 @@
+<div class="header-logo">
+	<a [routerLink]="['/']">
+		<img src="/assets/logos/icon-logo-white.png" title="Groupomania" />
+	</a>
+</div>
+<div class="header-options" *ngIf="!isLogged; else logged">
+	<button
+		[routerLink]="['/users/login']"
+		mat-button
+		routerLinkActive="router-link-active">
+		<span class="material-icons">
+			login
+		</span>
+	</button>
+	<button
+		[routerLink]="['/users/register']"
+		mat-button
+		routerLinkActive="router-link-active">
+		<span class="material-icons">
+			account_circle
+		</span>
+	</button>
+</div>
+<ng-template #logged>
+	<div class="header-options">
+		<!--<button
+			[routerLink]="['/wall']"
+			mat-button
+			routerLinkActive="router-link-active">
+			The Wall
+		</button>-->
+		<button 
+			*ngIf="!!userData"
+			[routerLink]="['/users', 'view', userData.userId]"
+			mat-button
+			routerLinkActive="router-link-active">
+			<span class="material-icons">
+				person
+			</span>
+		</button>
+		<button
+			*ngIf="isAdmin"
+			[routerLink]="['/users/list']"
+			mat-button
+			routerLinkActive="router-link-active">
+			<span class="material-icons">
+				supervisor_account
+			</span>
+		</button>
+		<button
+			[routerLink]="['/users/logout']"
+			mat-button
+			routerLinkActive="router-link-active">
+			<span class="material-icons">
+				exit_to_app
+			</span>
+		</button>
+	</div>
+</ng-template>

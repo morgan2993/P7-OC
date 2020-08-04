@@ -1,0 +1,70 @@
+<div class="welcome">
+	<h2>Bienvenue {{ user.firstname + ' ' + user.lastname }} !</h2>
+</div>
+<div class="create-post-container">
+	<button
+		class="create-post"
+		[routerLink]="['/posts/create']"
+		mat-flat-button
+		color="primary"
+		routerLinkActive="router-link-active">
+		Créer un nouvelle publication
+	</button>
+</div>
+
+<div class="post-container">
+	<mat-card class="post-item" *ngFor="let post of wall">
+		<mat-card-title>
+			<div class="post-title">{{ post.title }}</div>
+			<div class="post-actions" *ngIf="post.UserId === userId || isAdmin">
+				<button mat-icon-button [routerLink]="['/posts', 'edit', post.id]">
+					<mat-icon>edit</mat-icon>
+				</button>
+				<button mat-icon-button (click)="deletePost(post)">
+					<mat-icon>delete</mat-icon>
+				</button>
+			</div>
+		</mat-card-title>
+		<p class="post-author">
+			Publié par <span>{{ post.User.firstname + ' ' + post.User.lastname }}</span>
+			{{ updateDate(post.createdAt) }}
+		</p>
+		<mat-card-content class="post-img" *ngIf="!!post.url_image">
+			<img [src]="post.url_image">
+		</mat-card-content>
+		<mat-card-content>
+			<p>{{ post.content }}</p>
+		
+		</mat-card-content>
+		<mat-card-content>
+			<div class="comment-container" *ngFor="let comment of post.Comments">
+				<div class="comment-item">
+					<p>{{ comment.content }}</p>
+					<p class="comment-author">
+						par <span>{{ comment.User.firstname + ' ' + comment.User.lastname }}</span>
+						
+					</p>
+				</div>
+				<div class="comment-actions" *ngIf="comment.UserId === userId || isAdmin">
+					<!--<button *ngIf="comment.id" mat-icon-button (click)="editComment(comment)">
+						<mat-icon>edit</mat-icon>
+					</button>-->
+					<button *ngIf="comment.id" mat-icon-button (click)="deleteComment(comment)">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</div>
+			</div>
+		</mat-card-content>
+		<mat-card-actions>
+			<app-comment
+				[postId]="post.id"
+				[userId]="userId"
+				(updateComments)="updateComments($event)">
+			</app-comment>
+		</mat-card-actions>
+	</mat-card>
+</div>
+
+<div class="incentive">
+	<h1>C'est tout !</h1>
+</div>

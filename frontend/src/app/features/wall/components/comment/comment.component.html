@@ -1,0 +1,26 @@
+<div class="align-right">
+  <button
+	  type="button"
+	  mat-flat-button
+	  color="warn"
+	  (click)="showForm = !showForm">
+	  {{ showForm ? 'Annuler' : 'Commenter' }}
+  </button>
+</div>
+
+<div *ngIf="showForm">
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Comment</mat-label>
+      <input matInput formControlName="content" type="text" required />
+      <mat-error>This field in invalid.</mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      [disabled]="!commentForm.valid"
+      mat-flat-button
+      color="primary">
+      envoyer
+    </button>
+  </form>
+</div>

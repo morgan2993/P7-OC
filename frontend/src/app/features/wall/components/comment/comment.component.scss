@@ -1,0 +1,16 @@
+:host {
+	.align-right button {
+		margin: 0 0.5rem 0.5rem 0;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+    padding: 0 1rem;
+    margin: 1rem 0;
+
+		button {
+			padding: 0.5rem 0;
+		}
+	}
+}

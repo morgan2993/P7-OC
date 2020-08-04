@@ -1,0 +1,73 @@
+:host {
+
+  .welcome {
+    text-align: center;
+  }
+
+  .create-post-container {
+    padding: 0 1rem;
+  }
+
+  button.create-post {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .post-container {
+    padding: 1rem;
+
+    * > img {
+      max-width: 100%;
+    }
+  }
+
+  .post-author span,
+  .comment-author span {
+    text-decoration: none;
+    color: red;
+  }
+
+  .post-item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .mat-card-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .post-title {
+    flex: auto
+  }
+
+  .post-img {
+    text-align: center;
+  }
+
+  .post-actions {
+    min-width: 5rem;
+    text-align: right;
+  }
+
+  .comment-container {
+    border-radius: 0.3rem;
+    background-color: #eeeeee;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .comment-item {
+      padding: 1rem;
+      flex: auto;
+    }
+
+    .comment-actions {
+      align-self: flex-start;
+      margin: 0.3rem 0.5rem 0 0;
+      min-width: 5rem;
+      text-align: right;
+    }
+  }
+}

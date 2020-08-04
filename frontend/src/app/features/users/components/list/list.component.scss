@@ -1,0 +1,26 @@
+:host {
+  mat-card {
+    margin-bottom: 1rem;
+  }
+
+	mat-card-content {
+    display: flex;
+
+		.user-information {
+			flex: auto;
+    }
+    
+    .name a {
+	  font-weight: bold;
+	  text-decoration: none;
+	  color: red;
+    }
+
+		.user-actions {
+			align-self: flex-start;
+			margin: 0.3rem 0.5rem 0 0;
+			min-width: 5rem;
+			text-align: right;
+		}
+	}
+}

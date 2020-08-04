@@ -1,0 +1,55 @@
+<!--User:
+
+<pre>{{ user | json }}</pre>
+
+Posts ({{ posts.length }}):
+
+<pre>{{ posts | json }}</pre>-->
+
+
+<div class="logo-container">
+  <img src="/assets/logos/icon-above-font-wide.png">
+</div>
+<div class="title"><h1>Mon profil :</h1></div>
+<mat-card>
+	<mat-card-content>
+		<div class="user-information">
+			<div class="user-lastname"><strong>Nom : </strong>{{ user.lastname }}</div>
+			<div class="user-firstname"><strong>Prénom : </strong>{{ user.firstname }}</div>
+			<div class="status"><strong>Type de compte : </strong>{{ !!user.admin ? 'admin' : 'user' }}</div>
+            <div class="post-number"><strong>Nombre de postes : </strong>{{ posts.length }} </div>
+			<div class="subscribe-date"><strong>Inscrit depuis le : </strong>{{ updateDate(user.createdAt) }}</div>
+			<div class="user-actions">
+				<button mat-icon-button  (click)="deleteUser(user)" [routerLink]="['/users/logout']">Supprimer mon profil
+				  <mat-icon>delete</mat-icon>
+				</button>
+			</div>
+		</div>
+	</mat-card-content>
+	<div class="incentive">
+		ou <a 
+		
+		[routerLink]="['/wall']"
+		routerLinkActive="router-link-active">retour</a>
+	  </div>
+</mat-card>
+
+	<div class="title"><h1>Mes publications :</h1></div>
+
+<div class="post-container">
+	<mat-card class="post-item" *ngFor="let post of posts">
+		<mat-card-title>
+			<div class="post-title">{{ post.title }}</div>
+		</mat-card-title>
+		<p class="post-author">
+			Publié le {{ updateDate(post.createdAt) }}
+		</p>
+		<mat-card-content class="post-img" *ngIf="!!post.url_image">
+			<img [src]="post.url_image">
+		</mat-card-content>
+		<mat-card-content>
+			<p>{{ post.content }}</p>
+		
+		</mat-card-content>
+	</mat-card>
+</div>

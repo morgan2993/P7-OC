@@ -1,0 +1,31 @@
+<div class="align-center">
+  <h2>{{ title === 'create' ? 'Créer une nouvelle publication' : 'Modifier une publication' }}</h2>
+</div>
+
+<form [formGroup]="postForm" (ngSubmit)="title === 'create' ? onSubmit() : onSubmitChanges()">
+  <mat-form-field appearance="outline">
+    <mat-label>Titre</mat-label>
+    <input matInput formControlName="title" type="text" required>
+    <mat-error>This field in invalid.</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Contenu</mat-label>
+    <textarea 
+      matInput
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="5"
+      formControlName="content" 
+      type="text" 
+      required>
+    </textarea>
+    <mat-error>This field in invalid.</mat-error>
+  </mat-form-field>
+  <div class="file-input" *ngIf="title === 'create'">
+    <input type="file" name="image" #fileUpload>
+  </div>
+  <button type="submit" [disabled]="!postForm.valid" mat-flat-button color="primary">Publier</button>
+</form>
+
+<div class="incentive">
+  ou <a [routerLink]="['/wall']">annuler</a>
+</div>

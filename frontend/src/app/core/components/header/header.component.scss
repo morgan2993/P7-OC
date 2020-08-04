@@ -1,0 +1,44 @@
+:host {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  height: 3rem;
+  background-color: red;
+  color: white;
+  align-items: center;
+  z-index: 99;
+  overflow: hidden;
+
+  .header-logo {
+    margin-left: 0.5rem;
+    
+
+    img {
+      width: 2rem;
+    }
+  }
+
+  .header-options {
+    display: flex;
+    flex: auto;
+    justify-content: space-evenly;
+    
+
+    button {
+      padding: 0 0;
+     
+    }
+  }
+
+  button.cta-white {
+    background-color: white;
+    color: red;
+  }
+
+  // button {
+  //   &:not(:last-child) {
+  //     margin-right: 1rem;
+  //   }
+  // }
+}
