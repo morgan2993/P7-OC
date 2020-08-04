@@ -1,0 +1,21 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./out-tsc/app",
+		"paths": {
+			"@wall/*": ["src/app/features/wall/*"],
+			"@users/*": ["src/app/features/users/*"],
+			"@posts/*": ["src/app/features/posts/*"],
+			"@shared/*": ["src/app/shared/*"],
+			"@config/*": ["src/app/config/*"],
+			"@core/*": ["src/app/core/*"],
+			"@app/*": ["src/app/*"],
+			"@env/*": ["src/environments/*"]
+		},
+		"types": []
+	},
+	"files": ["src/main.ts", "src/polyfills.ts"],
+	"include": ["src/**/*.d.ts"]
+}
