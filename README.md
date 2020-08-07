@@ -27,6 +27,10 @@ then run ng serve
 
 # DATABASE 
 
+Crééer une Database
+
+données de la base de donnée dans backend>config>config.json (changer les données si besoin)
+
 GroupomaniaDB.sql dans dossier backend
 
 exporté avec MySqlWorkbench, fonctionne avec MySqlWorkbench.
