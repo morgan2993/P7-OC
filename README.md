@@ -1,6 +1,12 @@
 # P7-OC
 FInal Openclassroom Project Dev Web
 
+# Requirements
+
+Installer Sequelize 5.5.1
+Installer Angular
+Installer MySqlWorkbench
+
 # RUN BACKEND (Node.js)
 
 Go into backend folder
